@@ -1,0 +1,192 @@
+/*
+===================
+Font
+===================
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel");
+
+/*
+=======================
+variables
+=======================
+*/
+:root {
+	--primaryColor: #678e3e;
+	--primaryColorLight: #beed8c;
+
+	--darkGrey: #102a42;
+	--lightGrey: #617d98;
+	--lightestGrey: #f1f5f8;
+
+	--colorWhite: #fff;
+
+	--ffPrimary: "Catamaran", sans-serif;
+	--ffSecondary: "Grand Hotel", cursive;
+
+	--transitionEffect: all 0.3s linear;
+
+	--spacing: .25rem;
+	--radius: .5rem;
+}
+/*
+=====================
+Default
+=====================
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--ffPrimary);
+	background-color: var(--colorWhite);
+	color: var(--darkGrey);
+	line-height: 1.5;
+	font-size: .875rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+h1,
+h2,
+h3,
+h4 {
+	text-transform: capitalize;
+	letter-spacing: var(--spacing);
+	line-height: 1.25;
+	margin-bottom: .75rem;
+}
+
+h1 {
+	font-size: 3rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.5rem;
+}
+h4 {
+	font-size: .875rem;
+}
+p {
+	margin-bottom: 1.25rem;
+}
+
+/*
+=============================
+Default STYLE END HERE
+=============================
+*/
+
+/*
+==============================
+Media Query
+===============================
+*/
+@media screen and (min-width: 800px) {
+	h1 {
+		font-size: 4rem;
+	}
+	h2 {
+		font-size: 2.5rem;
+	}
+	h3 {
+		font-size: 2rem;
+	}
+	h4 {
+		font-size: 1rem;
+	}
+	body {
+		font-size: 1rem;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		line-height: 1;
+	}
+}
+/*
+===========================
+more global If necessary
+===========================
+*/
+.btn {
+	text-transform: uppercase;
+	background: var(--primaryColor);
+	color: var(--colorWhite);
+	padding: 0.5rem 1rem;
+	display: inline-block;
+	letter-spacing: var(--spacing);
+	font-weight: 700;
+	transition: var(--transitionEffect);
+	font-size: 1rem;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 0=> x ; 1px=>y , 3px=>blur */
+}
+
+.btn:hover {
+	color: var(--primaryColor);
+	background: var(--primaryColorLight);
+}
+
+/*
+=========================
+Header
+=========================
+*/
+.header {
+	min-height: 100vh;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/main-bcg.jpeg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/*to center the text I will be using position absolute
+	and this header is the parent , so it position must be absolute */
+	position: relative;
+	/* animation */
+	overflow-x: hidden;
+}
+
+.banner {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.banner h2 {
+	font-family: var(--ffSecondary);
+	color: var(--primaryColor);
+	/* animation */
+}
+
+.banner h1 {
+	text-transform: uppercase;
+	color: var(--colorWhite);
+	margin-top: 1.25rem;
+	margin-bottom: 2rem;
+	/* animation */
+}
+
+.banner-btn {
+	outline: 0.125rem solid var(--primaryColor);
+	outline-offset: 0.25rem;
+	font-size: 1.25rem;
+	padding: 1rem 1.75rem;
+}
