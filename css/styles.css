@@ -194,3 +194,45 @@ Header
 	height: .5rem;
 	background: linear-gradient(to left, var(--primaryColor), #e9b949, var(--primaryColor));
 }
+
+/*
+=========================
+Skills
+=========================
+*/
+.skills {
+	background: var(--lightestGrey);
+}
+
+.skill {
+	padding: 2.5rem 0;
+	text-align: center;
+	transition: var(--transitionEffect);
+}
+
+.skill-icon {
+	margin-bottom: 1.25rem;
+	/*as span is inline, so margin wont be applied if not set to inline-block or block*/
+	display: inline-block;
+	transition: var(--transitionEffect);
+	font-size: 2.5rem;
+	color: var(--primaryColor);
+}
+
+.skill-text {
+	color: var(--lightGrey);
+	max-width: 17rem;
+	/*after applying max-width paragraph gone to left but
+	we still have text-align center so that didnot works but p is block level
+	and for block level elements, we have margin:0 auto to place elemnt at center */
+	margin: 0 auto;
+}
+
+.skill:hover {
+	background: var(--colorWhite);
+	box-shadow: 0 2px var(--primaryColor); /*box shadow with no blur */
+}
+
+.skill:hover .skill-icon {
+	transform: translateY(-5px);
+}
