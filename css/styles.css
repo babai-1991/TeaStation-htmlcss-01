@@ -143,6 +143,13 @@ more global If necessary
 	background: var(--primaryColorLight);
 }
 
+.clearfix::before,
+.clearfix::after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
 /*
 =========================
 Header
@@ -235,4 +242,22 @@ Skills
 
 .skill:hover .skill-icon {
 	transform: translateY(-5px);
+}
+
+/* as by default because of block level element , each skills section will be stack on top
+of each other . So min-width:576px means any screen above 576px or same will have 2 column layout 
+and any screen less than 576px will be stacked on top of each other as its normal nature */
+@media screen and (min-width: 576px) {
+	/* 2 column layout */
+	.skill {
+		width: 50%;
+		float: left;
+	}
+}
+@media screen and (min-width: 1200px) {
+	/* 2 column layout */
+	.skill {
+		width: 25%;
+		float: left; /* float is optional because we mentioned in smaller screen size already */
+	}
 }
