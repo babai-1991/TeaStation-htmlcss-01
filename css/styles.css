@@ -149,6 +149,26 @@ more global If necessary
 	clear: both;
 	display: table;
 }
+.section-center {
+	padding: 4rem 0;
+	width: 85vw;
+	margin: 0 auto;
+	max-width: 1170px;
+}
+.section-title {
+	margin-bottom: 2rem;
+}
+.section-title h3 {
+	font-family: var(--ffSecondary);
+	color: var(--primaryColor);
+}
+
+@media screen and (min-width: 992px) {
+	.section-center {
+		width: 95vw;
+		padding: 4rem 1rem;
+	}
+}
 
 /*
 =========================
@@ -259,5 +279,50 @@ and any screen less than 576px will be stacked on top of each other as its norma
 	.skill {
 		width: 25%;
 		float: left; /* float is optional because we mentioned in smaller screen size already */
+	}
+}
+
+/*
+=========================
+Skills
+=========================
+*/
+.about-img,
+.about-info {
+	padding: 2rem 0;
+}
+
+.about-picture-container {
+	/*While hover, image gets a opacity of
+	 0.5 so background color will gets kick in */
+	background: var(--primaryColor);
+	border: 0.5rem solid var(--primaryColor);
+	max-width: 30rem;
+	/*Now while hovering over the image, image gets zoomed
+	and its not wrapping(not staying) inside its container*/
+	overflow: hidden;
+}
+
+.about-picture {
+	transition: var(--transitionEffect);
+}
+.about-picture-container:hover .about-picture {
+	opacity: 0.5;
+	transform: scale(1.2);
+}
+
+.about-text {
+	max-width: 26rem;
+	color: var(--lightGrey);
+}
+
+@media screen and (min-width: 992px) {
+	.about-img,
+	.about-info {
+		float: left;
+		width: 50%;
+	}
+	.about-info {
+		padding-left: 2rem;
 	}
 }
