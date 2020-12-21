@@ -135,7 +135,7 @@ more global If necessary
 	font-size: 1rem;
 	border: none;
 	cursor: pointer;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 0=> x ; 1px=>y , 3px=>blur */
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* 0= x-axis ; 1px=y-axis , 3px=blur */
 }
 
 .btn:hover {
@@ -169,7 +169,75 @@ more global If necessary
 		padding: 4rem 1rem;
 	}
 }
+/*
+=========================
+animation
+=========================
+*/
+@keyframes bounce {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
 
+@keyframes slideFromRight {
+	0% {
+		transform: translateX(1000px);
+		opacity: 0;
+	}
+	50% {
+		transform: translateX(-200px);
+		opacity: .5;
+	}
+	75% {
+		transform: translateX(50px);
+		opacity: .75;
+	}
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes slideFromLeft {
+	0% {
+		transform: translateX(-1000px);
+		opacity: 0;
+	}
+	50% {
+		transform: translateX(200px);
+		opacity: .5;
+	}
+	75% {
+		transform: translateX(-50px);
+		opacity: .75;
+	}
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes show {
+	0% {
+		transform: scale(1.5);
+		opacity: 0;
+	}
+	50% {
+		transform: scale(2);
+		opacity: 0.5;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
 /*
 =========================
 Navbar
@@ -183,6 +251,10 @@ Navbar
 	color: var(--primaryColor);
 	z-index: 1;
 	cursor: pointer;
+	animation-name: bounce;
+	animation-duration: 2s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
 }
 
 .navbar {
@@ -275,6 +347,10 @@ Header
 	font-family: var(--ffSecondary);
 	color: var(--primaryColor);
 	/* animation */
+	animation-name: slideFromRight;
+	animation-duration: 5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
 }
 
 .banner h1 {
@@ -283,6 +359,10 @@ Header
 	margin-top: 1.25rem;
 	margin-bottom: 2rem;
 	/* animation */
+	animation-name: slideFromLeft;
+	animation-duration: 5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
 }
 
 .banner-btn {
@@ -290,6 +370,11 @@ Header
 	outline-offset: 0.25rem;
 	font-size: 1.25rem;
 	padding: 1rem 1.75rem;
+	/*animation */
+	animation-name: show;
+	animation-duration: 5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
 }
 .content-divider {
 	height: .5rem;
