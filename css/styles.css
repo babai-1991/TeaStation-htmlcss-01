@@ -172,6 +172,21 @@ more global If necessary
 
 /*
 =========================
+Navbar
+=========================
+*/
+.nav-btn {
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	font-size: 2.5rem;
+	color: var(--primaryColor);
+	z-index: 1;
+	cursor: pointer;
+}
+
+/*
+=========================
 Header
 =========================
 */
